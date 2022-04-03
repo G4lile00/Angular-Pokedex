@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* color pallet 
+backgroud color: #eaebed
+text color: #0C080C
+border color: #3A287B
+accent color: #C2E812
+title color: #da0917
+*/
+@media screen and (max-width: 1920px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eaebedb4;
+    height: 40vh;
+    width: auto;
+    font-size: 50px;
+    font-family: "Arial";
+    color: #da0917;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    background-color: #eaebedb4;
+    height: 40vh;
+    width: auto;
+    font-size: 30px;
+    font-family: "Arial";
+    color: #da0917;
+    font-weight: bold;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header {
+    background-color: #eaebedb4;
+    height: 40vh;
+    width: auto;
+    font-size: 25px;
+    font-family: "Arial";
+    color: #da0917;
+    font-weight: bold;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header {
+    background-color: #eaebedb4;
+    height: 40vh;
+    width: auto;
+    font-size: 20px;
+    font-family: "Arial";
+    color: #da0917;
+    font-weight: bold;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ff1f1f;
+  border-radius: 10px;
+}
+.subimit {
+  background-color: #c2e812;
+  border: none;
+  border-radius: 10px;
+  color: #0c080c;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
