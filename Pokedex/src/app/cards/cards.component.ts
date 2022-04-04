@@ -13,10 +13,11 @@ export class CardsComponent implements OnInit {
     const GetPokemons = () => {
       const promises = [];
     
-      for (let i = 1; i < 152; i++) {
-        promises.push(
-          fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then((res) => res.json()),
-        );
+      for (let i = 1; i < 899; i++) {
+        
+          promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then((res) => res.json()));
+
+      
       }
       Promise.all(promises).then((data) => {
         const pokemon = data.map((poke) => ({
@@ -27,6 +28,7 @@ export class CardsComponent implements OnInit {
           types: poke.types.map((type:any) => type.type.name),
         }));
         Makelist(pokemon);
+        MakeDataList(pokemon);
       });
     };
     
@@ -50,6 +52,16 @@ export class CardsComponent implements OnInit {
         )
         .join("");
       pokedex!.innerHTML = Lists + pokedex!.innerHTML;
+    }
+
+    function MakeDataList(object: any[]) {
+      let datalist = document.getElementById("pokemon");
+      const datas = object
+        .map(
+          (individual: {name: any}) => ` <option value="${individual.name}"></option>`,
+        )
+        .join("");
+      datalist!.innerHTML = datas + datalist!.innerHTML;
     }
     
     GetPokemons();
