@@ -5,9 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
+  
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
     const GetPokemons = () => {
@@ -36,7 +39,9 @@ export class CardsComponent implements OnInit {
       let pokedex = document.getElementById("pokedex");
       const Lists = object
         .map(
-          (individual: { type: any; image: any; id: any; name: any; types: any; }) => `<li>
+          (individual: { type: any; image: any; id: any; name: any; types: any; }) => `<li onclick="function popUp(){
+            window.open('/poke?id=${individual.id}', '_self');}
+            popUp()">
         <div class="Card ${individual.type}">
         <img class="Card-img" src="${individual.image}" alt="${individual.id}">
         <div class="Card-info ">
@@ -52,6 +57,7 @@ export class CardsComponent implements OnInit {
         )
         .join("");
       pokedex!.innerHTML = Lists + pokedex!.innerHTML;
+
     }
 
     function MakeDataList(object: any[]) {
@@ -83,9 +89,13 @@ export class CardsComponent implements OnInit {
           Card!.classList.remove("bouncer");
         }, 2000);
       }
+    
     });
+
+
     
 
   }
 
 }
+
