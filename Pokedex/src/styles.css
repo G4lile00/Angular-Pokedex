@@ -3,7 +3,7 @@
   padding: 0;
   list-style-type: none;
   scroll-behavior: smooth;
-  box-sizing: order-ox;
+  box-sizing: border-box;
 }
 body {
   background-color: #eaebed;

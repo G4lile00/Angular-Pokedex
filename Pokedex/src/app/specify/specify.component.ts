@@ -11,11 +11,26 @@ export class SpecifyComponent implements OnInit {
   constructor() { }
   public poke: any;
 
-  ngOnInit(): void {
- this.getPokemon().then((res) =>
-       this.poke= res);
 
+  ngOnInit(): void {
+    const moves = document.getElementById("moves");
+
+
+    this.getPokemon().then((res) =>
+       this.poke= res);
+    this.getPokemon().then((res) =>
+      res.moves.forEach((move: any) => {
+        moves!.innerHTML += `<li>${move}</li>`;
+      }));
+   
+      
+   
+  
+  
+    
   }
+
+
 
   getPokemon() {
     var url = document.URL;
@@ -41,7 +56,9 @@ export class SpecifyComponent implements OnInit {
     return poke;
   }
  
-  
+  return() {
+    window.open('/', '_self')
+  }
 
 
 }
